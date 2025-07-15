@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Finder API</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #070606;
+      color: #f0f0f0;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    h1 {
+      color: #00bfff;
+      font-size: 3rem;
+    }
+    form {
+      margin-top: 2rem;
+    }
+    input {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: none;
+      width: 250px;
+      margin-right: 0.5rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      background-color: #00bfff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+    }
+    button:hover {
+      background-color: #0099cc;
+    }
+    a, code {
+      color: #ffd700;
+      font-weight: bold;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+    .form-section {
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎬 Movie Finder API</h1>
+
+  <div class="form-section">
+    <p>Search for a movie by title:</p>
+    <form id="searchForm">
+      <input type="text" id="title" placeholder="e.g. Inception" required />
+      <button type="submit">Search Title</button>
+    </form>
+  </div>
+
+  <div class="form-section">
+    <p>Get movie details by IMDb ID:</p>
+    <form id="detailsForm">
+      <input type="text" id="imdbId" placeholder="e.g. tt1375666" required />
+      <button type="submit">Get Details</button>
+    </form>
+  </div>
+
+  <footer>Powered by Express & OMDb API</footer>
+
+  <script>
+    // 🔍 Search by title
+    document.getElementById("searchForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const title = document.getElementById("title").value;
+      if (title) {
+        const url = `/api/search?title=${encodeURIComponent(title)}`;
+        window.open(url, '_blank');
+      }
+    });
+
+    // 🎬 Search by IMDb ID
+    document.getElementById("detailsForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const id = document.getElementById("imdbId").value;
+      if (id) {
+        const url = `/api/movies/${encodeURIComponent(id)}`;
+        window.open(url, '_blank');
+      }
+    });
+  </script>
+</body>
+</html>
