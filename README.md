@@ -5,9 +5,6 @@ An Express.js backend API that fetches movie data from the [OMDb API](https://ww
 ---
 ## 🖼️ Screenshot
 
-> 📸 Add a screenshot of your running app here  
-> Example:  
-
 ![Movie Finder API Landing Page](landing-page.png)
 
 ---
