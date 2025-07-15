@@ -5,12 +5,12 @@ An Express.js backend API that fetches movie data from the [OMDb API](https://ww
 ---
 
 ## 🚀 How to Test in Browser
-Search for movies by title.
+# Search for movies by title.
 
 Example:
-/api/search?title=batman
+/api/search?title=movieTitle
 
-Fetch movie details by IMDb ID.
+# Fetch movie details by IMDb ID.
 
 Example:
-/api/movies/tt1375666
+/api/movies/:id
